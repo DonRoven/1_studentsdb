@@ -18,7 +18,7 @@ class Student(models.Model):
     photo = models.ImageField(blank=True, verbose_name=u"Фото", null=True)
     ticket = models.CharField(max_length=256, blank=False, verbose_name=u"Білет")
     notes = models.TextField(blank=True, verbose_name=u"Додаткові нотатки")
-    student_droup = models.ForeignKey('Group', verbose_name=u'Група', blank=False, null=True, on_delete=models.PROTECT)
+    student_group = models.ForeignKey('Group', verbose_name=u'Група', blank=False, null=True, on_delete=models.PROTECT)
 
     def __unicode__(self):
         return u"%s %s" % (self.first_name, self.last_name)
@@ -41,3 +41,13 @@ class Group(models.Model):
 
         else:
             return u"%s" % (self.title,)
+
+#class Journal(models.Model):
+    #jornal Model
+
+#    class Meta(object):
+#        verbose_name = u'Журнал'
+#        verbose_name_plural = u'Журнали'
+
+#    student = models.OneToOneField('Student', verbose_name=u'Студент', blank=False, on_delete=models.SET_NULL)
+#    months = models.DateField(blank=False, verbose_name=u'Місяць')
