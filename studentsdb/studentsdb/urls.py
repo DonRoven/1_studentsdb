@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from students.views import groups, students
+from students.views import groups, students, contact_admin
 from .settings import MEDIA_ROOT, DEBUG
 
 
@@ -26,6 +26,9 @@ urlpatterns = [
     url(r'^students/add/$', students.students_add, name='students_add'),
     url(r'^students/(?P<sid>\d+)/edit/$', students.students_edit, name='students_edit'),
     url(r'^students/(?P<sid>\d+)/delete/$', students.students_delete, name='students_delete'),
+
+    # Contact Admin Form
+    url(r'^contact-admin/$', contact_admin.contact_admin, name = 'contact_admin' ),
 
     #Groups url
     url(r'^groups/$', groups.groups_list, name='groups'),
