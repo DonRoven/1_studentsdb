@@ -117,3 +117,12 @@ PORTAL_URL = 'http://localhost:8000'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
+
+# Email Settings
+from email_settings import ADMIN_EMAIL
+from email_settings import EMAIL_HOST
+from email_settings import EMAIL_PORT
+from email_settings import EMAIL_HOST_USER
+from email_settings import EMAIL_HOST_PASSWORD
+from email_settings import EMAIL_USE_TLS
+from email_settings import EMAIL_USE_SSL

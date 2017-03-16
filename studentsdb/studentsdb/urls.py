@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^students/(?P<sid>\d+)/delete/$', students.students_delete, name='students_delete'),
 
     # Contact Admin Form
-    url(r'^contact-admin/$', contact_admin.contact_admin, name = 'contact_admin' ),
+    url(r'^contact-admin/$', contact_admin.contact_admin, name='contact_admin' ),
 
     #Groups url
     url(r'^groups/$', groups.groups_list, name='groups'),
