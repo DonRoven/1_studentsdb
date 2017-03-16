@@ -17,15 +17,18 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from students.views import groups, students, contact_admin
 from .settings import MEDIA_ROOT, DEBUG
+from students.views.students import StudentUpdateView, StudentDeleteView
 
 
 
 urlpatterns = [
+#    url(r'^student_list/$', StudentList.as_view()),
+
     #Students url
     url(r'^$', students.students_list, name='home'),
     url(r'^students/add/$', students.students_add, name='students_add'),
-    url(r'^students/(?P<sid>\d+)/edit/$', students.students_edit, name='students_edit'),
-    url(r'^students/(?P<sid>\d+)/delete/$', students.students_delete, name='students_delete'),
+    url(r'^srudents/(?P<pk>\d+)/edit/$', StudentUpdateView(), name='students_edit'),
+    url(r'^students/(?P<pk>\d+)/delete/$', StudentDeleteView.as_view(), name='students_delete'),
 
     # Contact Admin Form
     url(r'^contact-admin/$', contact_admin.contact_admin, name='contact_admin' ),
@@ -39,7 +42,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
 
-#if DEBUG:
-#   urlpatterns += [
-#        url(r'^media/(?P<path>.*)$', include('django.views.static.serve', {'document_root': MEDIA_ROOT}) )
-#    ]
+if DEBUG:
+   urlpatterns += [
+        url(r'^media/(?P<path>.*)$', include('django.views.static.serve', {'document_root': MEDIA_ROOT}) )
+    ]

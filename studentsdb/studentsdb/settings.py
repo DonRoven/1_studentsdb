@@ -15,6 +15,17 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+PORTAL_URL = 'http://localhost:8000'
+
+# Email Settings
+from email_settings import ADMIN_EMAIL
+from email_settings import EMAIL_HOST
+from email_settings import EMAIL_PORT
+from email_settings import EMAIL_HOST_USER
+from email_settings import EMAIL_HOST_PASSWORD
+from email_settings import EMAIL_USE_TLS
+from email_settings import EMAIL_USE_SSL
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -27,6 +38,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CRISPY_TEMPLATE_PECK = 'bootstrap3'
 
 # Application definition
 
@@ -37,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'students',
 ]
 
@@ -113,16 +126,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-PORTAL_URL = 'http://localhost:8000'
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
-
-# Email Settings
-from email_settings import ADMIN_EMAIL
-from email_settings import EMAIL_HOST
-from email_settings import EMAIL_PORT
-from email_settings import EMAIL_HOST_USER
-from email_settings import EMAIL_HOST_PASSWORD
-from email_settings import EMAIL_USE_TLS
-from email_settings import EMAIL_USE_SSL

@@ -1,3 +1,5 @@
 Djangoo
 Pillow
 MySQL-python
+django-crispy-forms==1.4.0
+
